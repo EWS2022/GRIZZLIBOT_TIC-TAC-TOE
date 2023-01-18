@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+body {
+    text-align: center;
+    padding: 40px;
+    font-size: 4em;
+    font-family: 'Roboto Mono', monospace;
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    z-index: -1;
+    user-select: none;
+}
+
+.bg__item {
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: radial-gradient(2px 2px at 10px 20px, #eee, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 90px 40px, #ddd, rgba(0, 0, 0, 0));
+    background-size: 200px 200px;
+    animation: bg 15s linear infinite;
+    opacity: 0;
+    z-index: 0;
+}
+
+.bg__item:nth-child(1){
+    animation-delay: 0s;
+    background-position: 50% -40%;
+}
+
+.bg__item:nth-child(2){
+    animation-delay: 2s;
+    background-position: 20% 60%;
+}
+
+.bg__item:nth-child(3){
+    animation-delay: 4s;
+    background-position: 40% -80%;
+}
+
+.bg__item:nth-child(4){
+    animation-delay: 6s;
+    background-position: -20% -30%;
+}
+
+.bg__item:nth-child(1){
+    animation-delay: 8s;
+    background-position: 80% 30%;
+}
+
+@keyframes bg{
+    0%{
+        transform: translate(-50%, -50%) scale(1%) rotate(0deg);
+        opacity: 0;
+    }
+
+    85%{
+        transform: translate(-50%, -50%) scale(100%) rotate(360deg);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translate(-50%, -50%) scale(120%) rotate(400deg);
+        opacity: 0;
+    }
+}
+
+h1 {
+    color: white;
+    font-size: 44px;
+    margin: 30px;
+
+}
+
+p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 60px;
+
+}
+
+p span{
+    font-size: 32px;
+}
+
+.board {
+    width: 50vh;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: auto;
+    position: relative;
+    z-index: 5;
+}
+
+.case {
+    border: 1px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.571);
+    transition: 0.3s;
+}
+
+.case:hover {
+    background-color: rgba(255, 255, 255, 0.397);
+}
