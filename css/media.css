@@ -1,0 +1,39 @@
+@media(max-width: 425px) {
+    body {
+        padding: 0 16px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .board {
+        width: 90vw;
+        height: 90vw;
+    }
+}
+
+@media (max-width: 375px) {
+    h1{
+        font-size: 28px;
+    }
+
+    p{
+        font-size: 18px;
+    }
+
+    .case{
+        font-size: 15vw;
+    }
+}
+
+@media(max-width: 280px) {
+    h1{
+        font-size: 26px;
+    }
+}

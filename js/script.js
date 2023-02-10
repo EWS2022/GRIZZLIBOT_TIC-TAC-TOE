@@ -99,7 +99,7 @@ function gameHaveWin(emodji) {
                 winner = true;
                 setTimeout(() => {
                     alert('Le gagnant est: ' + emodji);
-                    reset();
+                    reset(emodji);
                 }, 500);
             }
         }
@@ -112,11 +112,18 @@ function gameHaveWin(emodji) {
     }
 }
 
-function reset() {
+function reset(winnerEmodji) {
     for (let i = 0; i < allCase.length; i++) {
         allCase[i].innerText = '';
     }
     winner = false;
     botThink = false;
     turnCount = 0;
+    if (winnerEmodji == '🧑‍💻') {
+        span.innerText = '🐻';
+        botThink = true;
+        botTurn();
+    } else {
+        span.innerText = '🧑‍💻';
+    }
 }
